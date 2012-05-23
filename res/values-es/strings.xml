@@ -79,6 +79,30 @@
     <item msgid="6048861883552402852">"25"</item>
     <item msgid="2740866721232379791">"30"</item>
   </string-array>
+    <!-- Setting title for the flip action setting. -->
+    <string name="flip_action_title">Darle la vuelta al teléfono</string>
+
+    <!-- Dialog title of the flip action setting. -->
+    <string name="flip_action_dialog_title">Accion al voltear</string>
+
+    <!-- Setting summary for the flip action setting. -->
+    <string name="flip_action_summary">Al voltear el teléfono
+        <xliff:g id="action">%s</xliff:g></string>
+
+    <!-- Entries listed in the setting for the flip action setting. -->
+    <string-array name="flip_action_entries">
+      <item>no hará nada</item>
+      <item>repetirá la alarma</item>
+      <item>descartará la alarma</item>
+    </string-array>
+
+    <!-- Values for the flip action setting. -->
+    <string-array name="flip_action_values">
+      <item>0</item>
+      <item>1</item>
+      <item>2</item>
+    </string-array>
+
     <string name="auto_silence_title" msgid="6940612987809171112">"Silenciar automáticamente"</string>
     <string name="auto_silence_summary" msgid="5757272454196171758">"Las alarmas se silenciarán tras <xliff:g id="MINUTES">%d</xliff:g> minutos"</string>
     <string name="auto_silence_never" msgid="4302257878142130807">"Desactivado"</string>
