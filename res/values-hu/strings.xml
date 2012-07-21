@@ -61,7 +61,7 @@
     <string name="analog_gadget" msgid="1670505720837152766">"Analóg óra"</string>
     <string name="settings" msgid="5849739030579520686">"Beállítások"</string>
     <string name="alarm_in_silent_mode_title" msgid="3892612644543516705">"Ébresztés néma üzemmódban"</string>
-    <string name="alarm_in_silent_mode_summary" msgid="6042500263899922832">"Az ébresztés akkor is megtörténik, ha a telefon néma üzemmódban van"</string>
+    <string name="alarm_in_silent_mode_summary" msgid="123772279768441207">"Legyen ébresztés néma üzemmódban is."</string>
     <string name="snooze_duration_title" msgid="1471249885139952670">"Szundi hossza"</string>
   <string-array name="snooze_duration_entries">
     <item msgid="8337408933053603125">"5 perc"</item>
@@ -113,6 +113,32 @@
     <item msgid="3204893476515513084">"1"</item>
     <item msgid="7687709558968154577">"2"</item>
   </string-array>
+
+    <!-- 20120513 -->
+    <!-- Setting title for the flip action setting. -->
+    <string name="flip_action_title">Telefon megfordítása</string>
+
+    <!-- Dialog title of the flip action setting. -->
+    <string name="flip_action_dialog_title">Telefon megfordítása</string>
+
+    <!-- Setting summary for the flip action setting. -->
+    <string name="flip_action_summary">A telefon megfordítására
+        <xliff:g id="action">%s</xliff:g></string>
+
+    <!-- Entries listed in the setting for the flip action setting. -->
+    <string-array name="flip_action_entries">
+      <item>Nem történik semmi</item>
+      <item>Szundi módba kerül az ébresztés</item>
+      <item>Elveti az ébresztést</item>
+    </string-array>
+
+    <!-- Values for the flip action setting. -->
+    <string-array name="flip_action_values">
+      <item>0</item>
+      <item>1</item>
+      <item>2</item>
+    </string-array>
+
     <string name="default_ringtone_setting_title" msgid="4549726190682964245">"Az alapértelmezett csengőhang beállítása"</string>
     <string name="alarm_button_description" msgid="740283647046258651">"Ébresztések"</string>
     <string name="gallery_button_description" msgid="1151743663255257668">"Galéria"</string>
@@ -120,7 +146,7 @@
     <string name="nightmode_button_description" msgid="990894208217576381">"Tompa"</string>
     <string name="home_button_description" msgid="3383859096809056157">"Indító"</string>
     <string name="desk_clock_button_description" msgid="4207371097361657274">"Óra megjelenítése"</string>
-    <string name="battery_charging_level" msgid="4391767951302394083">"<xliff:g id="NUMBER">%d</xliff:g><xliff:g id="PERCENT">%%</xliff:g>"</string>
+    <string name="battery_charging_level" msgid="5251483622085889693">"<xliff:g id="NUMBER">%d</xliff:g><xliff:g id="PERCENT">%%</xliff:g>"</string>
     <string name="weather_fetch_failure" msgid="3425804832021006835">"Most nem érhetők el időjárási adatok."</string>
     <string name="menu_item_dock_settings" msgid="3524235151132971114">"Dokkolási beállítások"</string>
     <string name="alarm_klaxon_service_desc" msgid="2147506334302260256">"Hanglejátszó szolgáltatás az Órában beállított riasztásokhoz."</string>

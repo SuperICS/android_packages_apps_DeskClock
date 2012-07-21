@@ -61,7 +61,7 @@
     <string name="analog_gadget" msgid="1670505720837152766">"አናሎግ ሰዓት"</string>
     <string name="settings" msgid="5849739030579520686">"ቅንብሮች"</string>
     <string name="alarm_in_silent_mode_title" msgid="3892612644543516705">"ማንቂያ በፀጥታ ሁነታ"</string>
-    <string name="alarm_in_silent_mode_summary" msgid="6042500263899922832">"ስልኩ በፀጥታ ሁነታ ላይ እንኳ እያለ ማንቂያ አጫውት"</string>
+    <string name="alarm_in_silent_mode_summary" msgid="123772279768441207">"ስልኩ በፀጥታ ሁኔታ ላይ እያለ እንኳ ማንቂያ አጫውት"</string>
     <string name="snooze_duration_title" msgid="1471249885139952670">"የማቆያ ጊዜ ርዝመት"</string>
   <string-array name="snooze_duration_entries">
     <item msgid="8337408933053603125">"5 ደቂቃዎች"</item>
@@ -120,7 +120,7 @@
     <string name="nightmode_button_description" msgid="990894208217576381">"ደብዛዛ ብርሃን"</string>
     <string name="home_button_description" msgid="3383859096809056157">"አስነሺ"</string>
     <string name="desk_clock_button_description" msgid="4207371097361657274">"ሰዓት ማሳያ"</string>
-    <string name="battery_charging_level" msgid="4391767951302394083">"<xliff:g id="NUMBER">%d</xliff:g><xliff:g id="PERCENT">%%</xliff:g>"</string>
+    <string name="battery_charging_level" msgid="5251483622085889693">"<xliff:g id="NUMBER">%d</xliff:g><xliff:g id="PERCENT">%%</xliff:g>"</string>
     <string name="weather_fetch_failure" msgid="3425804832021006835">"የአየር ጠባይ መረጃ አሁን አይገኝም፡፡"</string>
     <string name="menu_item_dock_settings" msgid="3524235151132971114">"ቅንብሮችን ትከል"</string>
     <string name="alarm_klaxon_service_desc" msgid="2147506334302260256">"በጠረጴዛ ሰዓት ለተዘጋጁ ማንቂያ ደውሎች የዳግም አጫዋት አገልግሎት ድምፅ አሰማ።"</string>

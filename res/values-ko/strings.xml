@@ -61,7 +61,7 @@
     <string name="analog_gadget" msgid="1670505720837152766">"아날로그 시계"</string>
     <string name="settings" msgid="5849739030579520686">"설정"</string>
     <string name="alarm_in_silent_mode_title" msgid="3892612644543516705">"무음 모드에서 알람 설정"</string>
-    <string name="alarm_in_silent_mode_summary" msgid="6042500263899922832">"무음 모드에서도 알람이 울리도록 설정"</string>
+    <string name="alarm_in_silent_mode_summary" msgid="123772279768441207">"무음 모드에서도 알람이 울리도록 설정"</string>
     <string name="snooze_duration_title" msgid="1471249885139952670">"다시 울림 간격"</string>
   <string-array name="snooze_duration_entries">
     <item msgid="8337408933053603125">"5분"</item>
@@ -97,7 +97,7 @@
     <string name="alarm_volume_title" msgid="8506245173912428522">"알람 볼륨"</string>
     <string name="alarm_volume_summary" msgid="8957440373896242438">"알람 볼륨 설정"</string>
     <string name="silent_alarm_summary" msgid="8605302849408279221">"무음"</string>
-    <string name="alarm_notify_text" msgid="4891014685945904766">"알람을 스누즈 또는 해제합니다."</string>
+    <string name="alarm_notify_text" msgid="4891014685945904766">"알람을 일시 중지하거나 해제합니다."</string>
     <string name="alarm_notify_snooze_label" msgid="5404083762646377829">"<xliff:g id="LABEL">%s</xliff:g>(알람 일시 중지됨)"</string>
     <string name="alarm_notify_snooze_text" msgid="4819324081410990368">"<xliff:g id="TIME">%s</xliff:g> 후로 알람이 설정되었습니다. 취소하려면 터치하세요."</string>
     <string name="volume_button_setting_title" msgid="6937131248843413357">"볼륨 버튼"</string>
@@ -120,7 +120,7 @@
     <string name="nightmode_button_description" msgid="990894208217576381">"낮추기"</string>
     <string name="home_button_description" msgid="3383859096809056157">"Launcher"</string>
     <string name="desk_clock_button_description" msgid="4207371097361657274">"시계 디스플레이"</string>
-    <string name="battery_charging_level" msgid="4391767951302394083">"<xliff:g id="NUMBER">%d</xliff:g><xliff:g id="PERCENT">%%</xliff:g>"</string>
+    <string name="battery_charging_level" msgid="5251483622085889693">"<xliff:g id="NUMBER">%d</xliff:g><xliff:g id="PERCENT">%%</xliff:g>"</string>
     <string name="weather_fetch_failure" msgid="3425804832021006835">"현재 날씨 정보를 이용할 수 없습니다."</string>
     <string name="menu_item_dock_settings" msgid="3524235151132971114">"도킹 설정"</string>
     <string name="alarm_klaxon_service_desc" msgid="2147506334302260256">"시계에서 설정한 알람 사운드 재생 서비스"</string>

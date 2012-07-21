@@ -26,38 +26,25 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.pm.PackageManager;
 import android.content.res.Configuration;
-import android.content.res.Resources;
-import android.database.ContentObserver;
-import android.database.Cursor;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.os.BatteryManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.provider.MediaStore;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.text.format.DateFormat;
 import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.GestureDetector;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.AnimationUtils;
 import android.widget.AbsoluteLayout;
-import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.Calendar;
@@ -74,6 +61,8 @@ public class DeskClock extends Activity {
 
     // Alarm action for midnight (so we can update the date display).
     private static final String ACTION_MIDNIGHT = "com.android.deskclock.MIDNIGHT";
+    private static final String KEY_DIMMED = "dimmed";
+    private static final String KEY_SCREEN_SAVER = "screen_saver";
 
     // This controls whether or not we will show a battery display when plugged
     // in.
@@ -138,6 +127,14 @@ public class DeskClock extends Activity {
                     finish();
                 }
                 mLaunchedFromDock = false;
+            } else if (Intent.ACTION_DOCK_EVENT.equals(action)) {
+                if (DEBUG) Log.d(LOG_TAG, "dock event extra "
+                        + intent.getExtras().getInt(Intent.EXTRA_DOCK_STATE));
+                if (mLaunchedFromDock && intent.getExtras().getInt(Intent.EXTRA_DOCK_STATE,
+                        Intent.EXTRA_DOCK_STATE_UNDOCKED) == Intent.EXTRA_DOCK_STATE_UNDOCKED) {
+                    finish();
+                    mLaunchedFromDock = false;
+                }
             }
         }
     };
@@ -215,6 +212,10 @@ public class DeskClock extends Activity {
             SCREEN_SAVER_TIMEOUT);
     }
 
+    /**
+     * Restores the screen by quitting the screensaver. This should be called only when
+     * {@link #mScreenSaverMode} is true.
+     */
     private void restoreScreen() {
         if (!mScreenSaverMode) return;
         if (DEBUG) Log.d(LOG_TAG, "restoreScreen");
@@ -224,11 +225,13 @@ public class DeskClock extends Activity {
         doDim(false); // restores previous dim mode
 
         scheduleScreenSaver();
-
         refreshAll();
     }
 
-    // Special screen-saver mode for OLED displays that burn in quickly
+    /**
+     * Start the screen-saver mode. This is useful for OLED displays that burn in quickly.
+     * This should only be called when {@link #mScreenSaverMode} is false;
+     */
     private void saveScreen() {
         if (mScreenSaverMode) return;
         if (DEBUG) Log.d(LOG_TAG, "saveScreen");
@@ -236,7 +239,10 @@ public class DeskClock extends Activity {
         // quickly stash away the x/y of the current date
         final View oldTimeDate = findViewById(R.id.time_date);
         int oldLoc[] = new int[2];
-        oldTimeDate.getLocationOnScreen(oldLoc);
+        oldLoc[0] = oldLoc[1] = -1;
+        if (oldTimeDate != null) { // monkeys tell us this is not always around
+            oldTimeDate.getLocationOnScreen(oldLoc);
+        }
 
         mScreenSaverMode = true;
         Window win = getWindow();
@@ -266,7 +272,11 @@ public class DeskClock extends Activity {
         refreshDate();
         refreshAlarm();
 
-        moveScreenSaverTo(oldLoc[0], oldLoc[1]);
+        if (oldLoc[0] >= 0) {
+            moveScreenSaverTo(oldLoc[0], oldLoc[1]);
+        } else {
+            moveScreenSaver();
+        }
     }
 
     @Override
@@ -393,6 +403,7 @@ public class DeskClock extends Activity {
         IntentFilter filter = new IntentFilter();
         filter.addAction(Intent.ACTION_DATE_CHANGED);
         filter.addAction(Intent.ACTION_BATTERY_CHANGED);
+        filter.addAction(Intent.ACTION_DOCK_EVENT);
         filter.addAction(UiModeManager.ACTION_EXIT_DESK_MODE);
         filter.addAction(ACTION_MIDNIGHT);
         registerReceiver(mIntentReceiver, filter);
@@ -431,25 +442,22 @@ public class DeskClock extends Activity {
             + " ms from now) repeating every "
             + AlarmManager.INTERVAL_DAY + " with intent: " + mMidnightIntent);
 
-        // If we weren't previously visible but now we are, it's because we're
-        // being started from another activity. So it's OK to un-dim.
-        if (mTime != null && mTime.getWindowVisibility() != View.VISIBLE) {
-            mDimmed = false;
-        }
-
         // Adjust the display to reflect the currently chosen dim mode.
         doDim(false);
-
-        restoreScreen(); // disable screen saver
-        refreshAll(); // will schedule periodic weather fetch
-
+        if (!mScreenSaverMode) {
+            restoreScreen(); // disable screen saver
+        } else {
+            // we have to set it to false because savescreen returns early if
+            // it's true
+            mScreenSaverMode = false;
+            saveScreen();
+        }
+        refreshAll();
         setWakeLock(mPluggedIn);
-
         scheduleScreenSaver();
 
         final boolean launchedFromDock
             = getIntent().hasCategory(Intent.CATEGORY_DESK_DOCK);
-
         mLaunchedFromDock = launchedFromDock;
     }
 
@@ -460,7 +468,6 @@ public class DeskClock extends Activity {
         // Turn off the screen saver and cancel any pending timeouts.
         // (But don't un-dim.)
         mHandy.removeMessages(SCREEN_SAVER_TIMEOUT_MSG);
-        restoreScreen();
 
         AlarmManager am = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         am.cancel(mMidnightIntent);
@@ -485,8 +492,10 @@ public class DeskClock extends Activity {
         final View.OnClickListener alarmClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mDimmed = false;
-                doDim(true);
+                if (mDimmed) {
+                    mDimmed = false;
+                    doDim(true);
+                }
                 startActivity(new Intent(DeskClock.this, AlarmClock.class));
             }
         };
@@ -562,7 +571,17 @@ public class DeskClock extends Activity {
         super.onCreate(icicle);
 
         mRNG = new Random();
+        if (icicle != null) {
+            mDimmed = icicle.getBoolean(KEY_DIMMED, false);
+            mScreenSaverMode = icicle.getBoolean(KEY_SCREEN_SAVER, false);
+        }
 
         initViews();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putBoolean(KEY_DIMMED, mDimmed);
+        outState.putBoolean(KEY_SCREEN_SAVER, mScreenSaverMode);
     }
 }

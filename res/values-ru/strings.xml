@@ -61,7 +61,7 @@
     <string name="analog_gadget" msgid="1670505720837152766">"Часы"</string>
     <string name="settings" msgid="5849739030579520686">"Настройки"</string>
     <string name="alarm_in_silent_mode_title" msgid="3892612644543516705">"Включать всегда"</string>
-    <string name="alarm_in_silent_mode_summary" msgid="6042500263899922832">"Подавать сигнал, даже если телефон работает в режиме без звука"</string>
+    <string name="alarm_in_silent_mode_summary" msgid="123772279768441207">"Включать сигнал будильника, даже если устройство работает в беззвучном режиме"</string>
     <string name="snooze_duration_title" msgid="1471249885139952670">"Интервал повтора сигнала"</string>
   <string-array name="snooze_duration_entries">
     <item msgid="8337408933053603125">"5 минут"</item>
@@ -98,8 +98,8 @@
     <string name="alarm_volume_summary" msgid="8957440373896242438">"Настройка громкости будильника"</string>
     <string name="silent_alarm_summary" msgid="8605302849408279221">"Без звука"</string>
     <string name="alarm_notify_text" msgid="4891014685945904766">"Отложить/выключить будильник"</string>
-    <string name="alarm_notify_snooze_label" msgid="5404083762646377829">"<xliff:g id="LABEL">%s</xliff:g> (отложено)"</string>
-    <string name="alarm_notify_snooze_text" msgid="4819324081410990368">"Будильник зазвонит в <xliff:g id="TIME">%s</xliff:g>. Нажмите, чтобы отменить."</string>
+    <string name="alarm_notify_snooze_label" msgid="5404083762646377829">"<xliff:g id="LABEL">%s</xliff:g> (отложен)"</string>
+    <string name="alarm_notify_snooze_text" msgid="4819324081410990368">"Повтор в <xliff:g id="TIME">%s</xliff:g>. Нажмите, чтобы отменить."</string>
     <string name="volume_button_setting_title" msgid="6937131248843413357">"Громкость"</string>
     <string name="volume_button_dialog_title" msgid="8768042543750036853">"Функция кнопок"</string>
     <string name="volume_button_setting_summary" msgid="4776447991226047070">"Определить функцию этой кнопки во время звонка будильника"</string>
@@ -120,11 +120,28 @@
     <string name="nightmode_button_description" msgid="990894208217576381">"Затемнить"</string>
     <string name="home_button_description" msgid="3383859096809056157">"Launcher"</string>
     <string name="desk_clock_button_description" msgid="4207371097361657274">"Внешний вид"</string>
-    <string name="battery_charging_level" msgid="4391767951302394083">"<xliff:g id="NUMBER">%d</xliff:g><xliff:g id="PERCENT">%%</xliff:g>"</string>
+    <string name="battery_charging_level" msgid="5251483622085889693">"<xliff:g id="NUMBER">%d</xliff:g><xliff:g id="PERCENT">%%</xliff:g>"</string>
     <string name="weather_fetch_failure" msgid="3425804832021006835">"Информация о погоде сейчас недоступна."</string>
     <string name="menu_item_dock_settings" msgid="3524235151132971114">"Настройки док-станции"</string>
     <string name="alarm_klaxon_service_desc" msgid="2147506334302260256">"Служба воспроизведения сигналов в Часах."</string>
     <string name="loading_ringtone" msgid="6523322777415268044">"Загрузка мелодии звонка..."</string>
     <string name="control_set_alarm" msgid="2194676418924016327">"Установить будильник"</string>
     <string name="control_set_alarm_with_existing" msgid="1128169496817859490">"Будильник установлен на <xliff:g id="TIME">%s</xliff:g>"</string>
+
+    <!-- Setting title for the flip action setting. -->
+    <string name="flip_action_title">Переворот</string>
+
+    <!-- Dialog title of the flip action setting. -->
+    <string name="flip_action_dialog_title">Действия при переворачивании телефона</string>
+
+    <!-- Setting summary for the flip action setting. -->
+    <string name="flip_action_summary">При переворачивании телефона
+        <xliff:g id="action">%s</xliff:g></string>
+
+    <!-- Entries listed in the setting for the flip action setting. -->
+    <string-array name="flip_action_entries">
+      <item>Ничего не делать</item>
+      <item>Отложить будильник</item>
+      <item>Выключить будильник</item>
+    </string-array>
 </resources>

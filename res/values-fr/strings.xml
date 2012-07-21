@@ -61,7 +61,7 @@
     <string name="analog_gadget" msgid="1670505720837152766">"Horloge analogique"</string>
     <string name="settings" msgid="5849739030579520686">"Paramètres"</string>
     <string name="alarm_in_silent_mode_title" msgid="3892612644543516705">"Alarme mode silencieux"</string>
-    <string name="alarm_in_silent_mode_summary" msgid="6042500263899922832">"Faire sonner l\'alarme même lorsque le téléphone est en mode silencieux"</string>
+    <string name="alarm_in_silent_mode_summary" msgid="123772279768441207">"Faire sonner l\'alarme même lorsque l\'appareil est en mode silencieux"</string>
     <string name="snooze_duration_title" msgid="1471249885139952670">"Répéter après"</string>
   <string-array name="snooze_duration_entries">
     <item msgid="8337408933053603125">"5 minutes"</item>
@@ -113,6 +113,18 @@
     <item msgid="3204893476515513084">"1"</item>
     <item msgid="7687709558968154577">"2"</item>
   </string-array>
+
+  <!-- START CM -->
+
+  <!-- Setting title for the flip action setting. -->
+  <string name="flip_action_title">Accéléromètre</string>
+  <!-- Setting summary for the flip action setting. -->
+  <string name="flip_action_summary">Pivoter l\'appareil pour : <xliff:g id="action">%s</xliff:g></string>
+  <!-- Dialog title of the flip action setting. -->
+  <string name="flip_action_dialog_title">Effet</string>
+
+  <!-- END CM -->
+
     <string name="default_ringtone_setting_title" msgid="4549726190682964245">"Définir la sonnerie par défaut"</string>
     <string name="alarm_button_description" msgid="740283647046258651">"Alarmes"</string>
     <string name="gallery_button_description" msgid="1151743663255257668">"Galerie"</string>
@@ -120,7 +132,7 @@
     <string name="nightmode_button_description" msgid="990894208217576381">"Assombrir"</string>
     <string name="home_button_description" msgid="3383859096809056157">"Lanceur d\'applications"</string>
     <string name="desk_clock_button_description" msgid="4207371097361657274">"Affichage de l\'horloge"</string>
-    <string name="battery_charging_level" msgid="4391767951302394083">"<xliff:g id="NUMBER">%d</xliff:g> <xliff:g id="PERCENT">%%</xliff:g>"</string>
+    <string name="battery_charging_level" msgid="5251483622085889693">"<xliff:g id="NUMBER">%d</xliff:g> <xliff:g id="PERCENT">%%</xliff:g>"</string>
     <string name="weather_fetch_failure" msgid="3425804832021006835">"Les informations météo ne sont pas disponibles actuellement."</string>
     <string name="menu_item_dock_settings" msgid="3524235151132971114">"Paramètres station d\'accueil"</string>
     <string name="alarm_klaxon_service_desc" msgid="2147506334302260256">"Service de retour audio pour les alarmes définies via l\'Horloge de bureau."</string>

@@ -36,8 +36,8 @@
     <string name="time" msgid="8067216534232296518">"Horário"</string>
     <string name="alarm_alert_dismiss_text" msgid="4942914605480888820">"Encerrar"</string>
     <string name="alarm_alert_alert_silenced" msgid="2704775170733835993">"Alarme silenciado após <xliff:g id="MINUTES">%d</xliff:g> minutos."</string>
-    <string name="alarm_alert_snooze_text" msgid="1774416052207651584">"Colocar em modo de espera"</string>
-    <string name="alarm_alert_snooze_set" msgid="656470966696912087">"Em espera por <xliff:g id="MINUTES">%d</xliff:g> minutos."</string>
+    <string name="alarm_alert_snooze_text" msgid="1774416052207651584">"Colocar em modo soneca"</string>
+    <string name="alarm_alert_snooze_set" msgid="656470966696912087">"Soneca de <xliff:g id="MINUTES">%d</xliff:g> minutos."</string>
   <string-array name="alarm_set">
     <item msgid="6450913786084215050">"Alarme definido para menos de um minuto a partir de agora."</item>
     <item msgid="6002066367368421848">"Alarme definido para <xliff:g id="DAYS">%1$s</xliff:g> a partir de agora."</item>
@@ -61,8 +61,8 @@
     <string name="analog_gadget" msgid="1670505720837152766">"Relógio analógico"</string>
     <string name="settings" msgid="5849739030579520686">"Configurações"</string>
     <string name="alarm_in_silent_mode_title" msgid="3892612644543516705">"Modo silencioso"</string>
-    <string name="alarm_in_silent_mode_summary" msgid="6042500263899922832">"Tocar o alarme mesmo quando o telefone estiver no modo silencioso"</string>
-    <string name="snooze_duration_title" msgid="1471249885139952670">"Modo de espera"</string>
+    <string name="alarm_in_silent_mode_summary" msgid="123772279768441207">"Tocar o alarme mesmo quando o dispositivo estiver no modo silencioso"</string>
+    <string name="snooze_duration_title" msgid="1471249885139952670">"Modo soneca"</string>
   <string-array name="snooze_duration_entries">
     <item msgid="8337408933053603125">"5 minutos"</item>
     <item msgid="5294206441496024610">"10 minutos"</item>
@@ -98,14 +98,14 @@
     <string name="alarm_volume_summary" msgid="8957440373896242438">"Definir o volume dos alarmes"</string>
     <string name="silent_alarm_summary" msgid="8605302849408279221">"Silencioso"</string>
     <string name="alarm_notify_text" msgid="4891014685945904766">"Soneca ou cancelar alarme"</string>
-    <string name="alarm_notify_snooze_label" msgid="5404083762646377829">"<xliff:g id="LABEL">%s</xliff:g> (em modo de espera)"</string>
+    <string name="alarm_notify_snooze_label" msgid="5404083762646377829">"<xliff:g id="LABEL">%s</xliff:g> (em modo soneca)"</string>
     <string name="alarm_notify_snooze_text" msgid="4819324081410990368">"Alarme definido para as <xliff:g id="TIME">%s</xliff:g>. Toque para cancelar."</string>
     <string name="volume_button_setting_title" msgid="6937131248843413357">"Botões de volume"</string>
     <string name="volume_button_dialog_title" msgid="8768042543750036853">"Efeito do botão"</string>
     <string name="volume_button_setting_summary" msgid="4776447991226047070">"Define a ação desses botões quando pressionados durante um alarme"</string>
   <string-array name="volume_button_setting_entries">
     <item msgid="4520420953175098625">"Nenhum"</item>
-    <item msgid="7111908302622811168">"Colocar em modo de espera"</item>
+    <item msgid="7111908302622811168">"Colocar em modo soneca"</item>
     <item msgid="8573552194573068996">"Descartar"</item>
   </string-array>
   <string-array name="volume_button_setting_values">
@@ -120,11 +120,19 @@
     <string name="nightmode_button_description" msgid="990894208217576381">"Escurecer"</string>
     <string name="home_button_description" msgid="3383859096809056157">"Launcher"</string>
     <string name="desk_clock_button_description" msgid="4207371097361657274">"Exibição do relógio"</string>
-    <string name="battery_charging_level" msgid="4391767951302394083">"<xliff:g id="NUMBER">%d</xliff:g><xliff:g id="PERCENT">%%</xliff:g>"</string>
+    <string name="battery_charging_level" msgid="5251483622085889693">"<xliff:g id="NUMBER">%d</xliff:g><xliff:g id="PERCENT">%%</xliff:g>"</string>
     <string name="weather_fetch_failure" msgid="3425804832021006835">"As informações meteorológicas não estão disponíveis no momento."</string>
     <string name="menu_item_dock_settings" msgid="3524235151132971114">"Configurações de dock"</string>
     <string name="alarm_klaxon_service_desc" msgid="2147506334302260256">"Serviço de reprodução de som para alarmes definidos no Relógio."</string>
     <string name="loading_ringtone" msgid="6523322777415268044">"Carregando toque…"</string>
     <string name="control_set_alarm" msgid="2194676418924016327">"Definir alarme"</string>
     <string name="control_set_alarm_with_existing" msgid="1128169496817859490">"Alarme definido: <xliff:g id="TIME">%s</xliff:g>"</string>
+    <string name="flip_action_title">Ação de virar</string>
+    <string name="flip_action_dialog_title">Ação de virar</string>
+    <string name="flip_action_summary">Virando o telefone para baixo irá        <xliff:g id="action" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">%s</xliff:g></string>
+    <string-array name="flip_action_entries">
+        <item>Fazer nada</item>
+        <item>Colocar alarme em soneca</item>
+        <item>Encerrar o alarme</item>
+    </string-array>
 </resources>

@@ -34,7 +34,7 @@
     <string name="alarm_repeat" msgid="7242985466344233206">"दोहराएं"</string>
     <string name="alert" msgid="6539852766423700221">"रिंगटोन"</string>
     <string name="time" msgid="8067216534232296518">"समय"</string>
-    <string name="alarm_alert_dismiss_text" msgid="4942914605480888820">"ख़ारिज करें"</string>
+    <string name="alarm_alert_dismiss_text" msgid="4942914605480888820">"खारिज करें"</string>
     <string name="alarm_alert_alert_silenced" msgid="2704775170733835993">"अलार्म <xliff:g id="MINUTES">%d</xliff:g> मिनट बाद मौन हो जाएगा"</string>
     <string name="alarm_alert_snooze_text" msgid="1774416052207651584">"स्नूज़ करें"</string>
     <string name="alarm_alert_snooze_set" msgid="656470966696912087">"<xliff:g id="MINUTES">%d</xliff:g> मिनट के लिए स्नूज़ कर रहा है."</string>
@@ -61,7 +61,7 @@
     <string name="analog_gadget" msgid="1670505720837152766">"एनालॉग घड़ी"</string>
     <string name="settings" msgid="5849739030579520686">"सेटिंग"</string>
     <string name="alarm_in_silent_mode_title" msgid="3892612644543516705">"मौन मोड में अलार्म"</string>
-    <string name="alarm_in_silent_mode_summary" msgid="6042500263899922832">"जब फ़ोन मौन मोड में हो, तब भी अलार्म बजाएं"</string>
+    <string name="alarm_in_silent_mode_summary" msgid="123772279768441207">"उपकरण मौन मोड में हो, तब भी अलार्म बजाएं"</string>
     <string name="snooze_duration_title" msgid="1471249885139952670">"स्नूज़ की अवधि"</string>
   <string-array name="snooze_duration_entries">
     <item msgid="8337408933053603125">"5 मिनट"</item>
@@ -106,7 +106,7 @@
   <string-array name="volume_button_setting_entries">
     <item msgid="4520420953175098625">"कोई नहीं"</item>
     <item msgid="7111908302622811168">"स्नूज़ करें"</item>
-    <item msgid="8573552194573068996">"ख़ारिज करें"</item>
+    <item msgid="8573552194573068996">"खारिज करें"</item>
   </string-array>
   <string-array name="volume_button_setting_values">
     <item msgid="4851033050639608752">"0"</item>
@@ -120,7 +120,7 @@
     <string name="nightmode_button_description" msgid="990894208217576381">"मद्धिम करें"</string>
     <string name="home_button_description" msgid="3383859096809056157">"लॉन्चर"</string>
     <string name="desk_clock_button_description" msgid="4207371097361657274">"घड़ी का प्रदर्शन"</string>
-    <string name="battery_charging_level" msgid="4391767951302394083">"<xliff:g id="NUMBER">%d</xliff:g><xliff:g id="PERCENT">%%</xliff:g>"</string>
+    <string name="battery_charging_level" msgid="5251483622085889693">"<xliff:g id="NUMBER">%d</xliff:g><xliff:g id="PERCENT">%%</xliff:g>"</string>
     <string name="weather_fetch_failure" msgid="3425804832021006835">"मौसम की जानकारी अभी उपलब्ध नहीं है."</string>
     <string name="menu_item_dock_settings" msgid="3524235151132971114">"डॉक सेटिंग"</string>
     <string name="alarm_klaxon_service_desc" msgid="2147506334302260256">"घड़ी में सेट अलार्म के लिए ध्वनि प्लेबैक सेवा."</string>

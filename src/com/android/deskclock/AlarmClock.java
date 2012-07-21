@@ -16,6 +16,7 @@
 
 package com.android.deskclock;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -37,7 +38,6 @@ import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.CheckBox;
 import android.widget.CursorAdapter;
-import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -211,17 +211,20 @@ public class AlarmClock extends Activity implements OnItemClickListener {
         mAlarmsList.setOnCreateContextMenuListener(this);
 
         View addAlarm = findViewById(R.id.add_alarm);
-        addAlarm.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v) {
-                    addNewAlarm();
-                }
+        if (addAlarm != null) {
+            addAlarm.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View v) {
+                        addNewAlarm();
+                    }
+                });
+            // Make the entire view selected when focused.
+            addAlarm.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+                    public void onFocusChange(View v, boolean hasFocus) {
+                        v.setSelected(hasFocus);
+                    }
             });
-        // Make the entire view selected when focused.
-        addAlarm.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-                public void onFocusChange(View v, boolean hasFocus) {
-                    v.setSelected(hasFocus);
-                }
-        });
+        }
+
         View doneButton = findViewById(R.id.done);
         if (doneButton != null) {
             doneButton.setOnClickListener(new View.OnClickListener() {
@@ -229,6 +232,21 @@ public class AlarmClock extends Activity implements OnItemClickListener {
                     finish();
                 }
             });
+        }
+
+        View settingsButton = findViewById(R.id.settings);
+        if (settingsButton != null) {
+            settingsButton.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    startActivity(new Intent(AlarmClock.this, SettingsActivity.class));
+                    finish();
+                }
+            });
+        }
+
+        ActionBar actionBar = getActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayOptions(ActionBar.DISPLAY_HOME_AS_UP, ActionBar.DISPLAY_HOME_AS_UP);
         }
     }
 
@@ -291,7 +309,7 @@ public class AlarmClock extends Activity implements OnItemClickListener {
             case R.id.menu_item_add_alarm:
                 addNewAlarm();
                 return true;
-            case R.id.menu_item_done:
+            case android.R.id.home:
                 finish();
                 return true;
             default:
